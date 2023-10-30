@@ -3,7 +3,7 @@ pipeline
     agent any
 
     tools{
-        gradle "gradle-7.5"
+        gradle "gradle"
         }
 
     stages
