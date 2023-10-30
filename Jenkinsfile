@@ -9,7 +9,7 @@ pipeline
 //             }
 //         }
 
-        stage("Deploy to QA"){
+        stage("Deploy to QA 1"){
             steps{
                 echo("deploy to qa")
             }
