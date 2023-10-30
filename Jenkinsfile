@@ -10,7 +10,7 @@ pipeline
 //         }
             stage('Gradle Build') {
                   steps {
-                    sh 'gradle clean build'
+                    sh './gradlew clean build'
                   }
             }
             stage("Deploy to QA 1"){
