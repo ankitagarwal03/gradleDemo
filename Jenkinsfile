@@ -1,13 +1,13 @@
 pipeline
 {
     agent any
-
     stages
     {
         stage('Test') {
             steps {
                 bat "gradle clean test"
             }
+        }
 
         stage("Deploy to QA"){
             steps{
@@ -23,6 +23,7 @@ pipeline
                 }
             }
         }
+
         stage("Deploy to Stage"){
             steps{
                 echo("deploy to Stage")
