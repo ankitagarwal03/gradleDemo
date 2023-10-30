@@ -10,7 +10,7 @@ pipeline
 //         }
             stage('Gradle Build') {
                   steps {
-                    sh './gradlew clean build'
+                    sh './gradlew clean runSuiteXml'
                   }
             }
             stage("Deploy to QA 1"){
