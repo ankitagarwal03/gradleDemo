@@ -8,10 +8,14 @@ pipeline
 //                 bat "gradle clean test"
 //             }
 //         }
-
-        stage("Deploy to QA 1"){
-            steps{
-                echo("deploy to qa")
+            stage('Gradle Build') {
+                  steps {
+                    sh 'gradle clean build'
+                  }
+            }
+            stage("Deploy to QA 1"){
+                steps{
+                    echo("deploy to qa")
             }
         }
 
@@ -19,7 +23,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/ankitagarwal03/gradleDemo'
-                    sh "./gradlew runSuiteXml --no-daemon"
+                    sh "./gradlew runSuiteXml"
                 }
             }
         }
