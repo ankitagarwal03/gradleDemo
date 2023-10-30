@@ -2,17 +2,19 @@ pipeline
 {
     agent any
 
-    tools{
-        gradle "gradle"
-        }
-
     stages
     {
+        stage('Test') {
+            steps {
+                bat "gradle clean test"
+            }
+
         stage("Deploy to QA"){
             steps{
                 echo("deploy to qa")
             }
         }
+
         stage('runSuiteXml') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
