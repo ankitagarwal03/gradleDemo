@@ -3,11 +3,7 @@ pipeline
     agent any
     stages
     {
-//         stage('Test') {
-//             steps {
-//                 bat "gradle clean test"
-//             }
-//         }
+
             stage('Gradle Build') {
                   steps {
                     sh './gradlew clean runSuiteXml'
